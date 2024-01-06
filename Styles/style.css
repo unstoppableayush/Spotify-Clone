@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100;200;300;400;500;600;700;800&family=Flow+Circular&family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+margin: 0;
+padding: 0;
+font-family: 'Roboto' , sans-serif;
+
+}
+body{
+    background-color: black; 
+     color:white;
+}
+
+.left{
+    width: 25vw;
+    padding: 10px;
+}
+.right{
+    width: 75vw;
+}
+
+.home{
+}
+.home ul li{
+    display: flex;
+    gap: 20px;
+    width: 25px;
+    list-style: none;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.heading{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+    font-weight: bold;
+    align-items: center;
+    font-size: 13px;
+}
+.heading img{
+    width: 25px;
+}
+.library{
+    min-height: 66vh;
+    position: relative;
+}
+.footer{
+    font-size: 12px;
+    color: grey;
+    position: absolute;
+    bottom: 90px;
+}
+.footer a{
+    color: grey;
+    text-decoration:none;
+}
+.footer a:hover{
+    color: grey;
+    text-decoration:underline;
+}
+
+.btn {
+    display: flex;
+    gap: 5px;
+    font-weight: bold;
+    align-items: center;
+    padding: 8px;
+    border: 0.5px solid grey;
+    width: 75px;
+    height: 15px;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 20px;
+    
+}
+.btn img{
+    width: 15px;
+}
+
+.btn:hover{
+    border: 1px solid white;
+    transform: scale(1.05);
+}
+
+.right{
+    margin: 16px 0;
+    position: relative;
+    
+}
+.arrow{
+    width: 20px;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 2px;
+    background-color: white;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0d0d0d;
+    height: 65px;
+    align-items: center;
+    border-radius: 10px 0 ;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+.header > *{
+    padding: 20px;
+}
+.spotify-playlist{
+    padding: 16px;
+    font-size: 20px;
+}
+
+.card-container{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+    
+}
+.card{
+    width: 150px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color:#161616;
+    position: relative;
+}
+
+.card > *{
+    padding-top: 3px;
+    
+}
+p{
+    font-size: 15px;
+}
+
+.card img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.play{
+    height: 30px;
+    width: 30px;
+    border-radius:50px;
+    padding: 10px;
+    background-color:#1fdf64;
+    position: absolute;
+    top:120px;
+    right: 25px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.card:hover{
+    background-color: #262626;
+    .play {
+        opacity: 1;
+        top:110px;
+    }
+}
+
+.buttons > *{
+    margin: 0 12px;
+}
+.signupbtn{
+    font-weight: bold;
+    color: #a7a7a7;
+    outline: none;
+    background-color:#0d0d0d ;
+    border: none;
+    font-size: 1.1rem;
+    /* padding: 0px 20px; */
+}
+.signupbtn:hover{
+    font-size: 1.17rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.loginbtn{
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(21, 20, 20);
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    padding: 15px;
+    width: 100px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.loginbtn:hover{
+    transform: scaleX(1.08);
+}
+
+.playbar{
+    background-color: #2c2b2b; 
+    position: fixed;
+    bottom: 25px;
+    width: 70vw;
+    padding: 12px;
+    border-radius: 10px;
+    min-height: 45px;
+    opacity: 50%;
+
+}
+
+.songsbutton{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    height: 20px;
+}
+
+.songList{
+    height: 300px;
+    overflow: auto;
+    padding-right: 12px;
+}
+.songList ul{
+    padding: 10px 0px;
+    
+}
+
+
+.songList ul li{
+    list-style-type: decimal;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    border: 1px solid white;
+    margin-bottom: 13px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.songList .info{
+    font-size: 13px;
+    width: 150px;
+}
+.info{
+    word-break: break-all;
+}
+.playnow{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.playnow span{
+    font-size: 10px;
+    width: 50px;
+    padding: 10px;
+}
+
+.seekbar{
+    height: 2px;
+    width: 98%;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: absolute;
+    bottom:10px;
+    cursor: pointer;
+    
+}
+
+.circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 13px;
+    background-color: white;
+    position: relative;
+    bottom: 7px;
+    left: 0%;
+    transition: left 0.5s;
+}
+.songsbutton img{
+    cursor: pointer;
+}
+
+.abovebar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.songsbutton{
+    width: 20%;
+}
+.songinfo{
+    width: 40%;
+    font-size: 13px;
+
+}
+.volume{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    width: 30%;
+    font-size: 12px;
+    cursor: pointer;
+}
+.range input{
+    cursor: pointer;
+    
+}
+
+.songtime{
+    display: flex;
+    justify-content: end;
+    width: 10%;
+    font-size: 13px;
+    
+}
+
+.songinfo , .songtime{
+    padding: 0px 10px;
+}
+
+.hamburger{
+    display: none;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.close{
+    display: none;
+}
+
+
+.hide{
+    display: none;
+}
+@media (max-width: 1200px) {
+    .left{
+        position: absolute;
+        left: -130%;
+        transition: all .5sec;
+        z-index: 1;
+        width: 370px;
+        background-color: #1f1e1e;
+        padding: 0;
+    }
+
+    .close{
+        position: absolute;
+        right: 25px;
+        top: 30px;
+        display: block;
+        cursor: pointer;
+    }
+ 
+    .songinfo , .songtime{
+        font-size: 11px;
+    }
+
+    .abovebar{
+        padding-bottom: 10px;
+    }
+    .right{
+        width: 100vw;
+        margin: 0px;
+    }
+    .playbar{
+        /* width: 88vw; */
+        width: calc(100vw - 60px);
+        
+    }
+    .seekbar{
+        /* width: 95%; */
+        width: calc(100vw - 60px);
+    }
+
+    .hamburger{
+        display: block;
+        width: 33px;
+    }
+    .card{
+        width: 250px;
+    }
+    .card:hover{
+        .play {
+            opacity: 1;
+            top:210px;
+        }
+    }
+    .card-container{
+        justify-content: center;
+        max-height: unset;
+
+        overflow-y: unset;
+    
+    }
+    .left{
+        position: fixed;
+        top: 0px;
+    }
+    
+}
+
+@media (max-width : 500px) {
+    .card{
+        width: auto;
+    }
+    .card:hover{
+        .play {
+            opacity: 1;
+            top:255px;
+        }
+    }
+    .card-container{
+        margin-bottom: 20vh;
+    }
+    
+    
+    
+    .volume{
+        display: flex;
+        flex-direction: column;
+        gap: 10 px;
+        width: 30%;
+    }
+    .buttons > *{
+        margin: 0 2px;
+    }
+    .arrow{
+        /* width: 15px;
+        border-radius: 20px;
+        background-color: white;
+        opacity: 0.5;
+        cursor: not-allowed; */
+        display: none;
+    
+    }
+
+    .loginbtn{
+        font-weight: bold;
+        font-size: 12px;
+        border-radius: 30px;
+        padding: 10px;
+        width: 70px;
+    }
+    .signupbtn{
+        font-weight: bold;
+        color: #a7a7a7;
+        outline: none;
+        background-color:#0d0d0d ;
+        border: none;
+        font-size: 12px;
+        /* padding: 0px 20px; */
+    }
+    .signupbtn:hover{
+        font-size: 1.0rem;
+    }
+    .left{
+        position: fixed;
+        top: 0;
+        width: 100vw;
+    }
+    .range input{
+        width: 80px;
+    }
+    .volume{
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+        position: relative;
+    }
+    .volume .range{
+        position: absolute;
+        transform: rotate(270deg);
+        bottom: 75px;
+    }
+    
+}
