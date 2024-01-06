@@ -60,7 +60,7 @@ async function getSongs(folder){
     //Attach an event listner to each song
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
         e.addEventListener("click" , element =>{
-            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            // console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
         })
         
@@ -105,7 +105,7 @@ async function displayAlbums(){
             //get the metadat of the folder
             let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`);
             let resposne = await a.json();
-            console.log(resposne);
+            // console.log(resposne);
 
             cardContainer.innerHTML = cardContainer.innerHTML +`<div data-folder="${folder}" class="card ">
             <div  class="play"><img src="Images/playbtn.svg" alt=""></div>                
@@ -117,9 +117,9 @@ async function displayAlbums(){
         //Load the playlist whenever card is clicked
 
         Array.from(document.getElementsByClassName("card")).forEach(e=>{
-            console.log(e);
+            // console.log(e);
             e.addEventListener("click" ,async item=>{
-                console.log(item.currentTarget.dataset);
+                // console.log(item.currentTarget.dataset);
                 songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
                 playMusic(songs[0]);
                 
@@ -132,7 +132,7 @@ async function main(){
 
     //get the list of all the songs
      await getSongs("songs/ncs");
-    console.log(songs);
+    // console.log(songs);
     playMusic(songs[0] ,true);
 
     //Display all the albums on the page
@@ -176,6 +176,7 @@ async function main(){
     
     document.querySelector(".hamburger").addEventListener("click" ,()=>{
         document.querySelector(".left").style.left = 0;
+        document.querySelector(".left").style.transition = "all 0.8s ease-out";
     })
 
     //Add an event listner for close button
@@ -187,7 +188,7 @@ async function main(){
 
     previous.addEventListener("click" , ()=>{
         currentSong.pause()
-        console.log("previous");
+        // console.log("previous");
 
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]); 
         if(index-1 >= 0)
@@ -196,10 +197,10 @@ async function main(){
 
     next.addEventListener("click" , ()=>{
         currentSong.pause()
-        console.log("next");
+        // console.log("next");
 
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-        console.log(index);
+        // console.log(index);
 
         if(index+1 < songs.length)
         playMusic(songs[index+1])
@@ -207,7 +208,7 @@ async function main(){
 
     //Add an event to volume
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change" , (e)=>{
-        console.log("setting value to",e.target.value);
+        // console.log("setting value to",e.target.value);
         currentSong.volume =parseInt(e.target.value)/100;
         if(currentSong.volume > 0){
             document.querySelector(".volume img").src = document.querySelector(".volume img").src.replace("mute.svg","volume.svg")
@@ -216,7 +217,7 @@ async function main(){
 
     //Adde event listenr to mute the track
     document.querySelector(".volume img").addEventListener("click",e=>{
-        console.log(e.target)
+        // console.log(e.target)
         if(e.target.src.includes("volume.svg")){
             e.target.src = e.target.src.replace("volume.svg","mute.svg")
             document.querySelector(".range").getElementsByTagName("input")[0].value= 0;
@@ -235,7 +236,9 @@ async function main(){
     })   
 
     document.querySelector(".volume").addEventListener("mouseout" , ()=>{
+        setTimeout(()=>{
             document.querySelector(".range").classList.add("hide");
+        },6000)
     }) 
 }
 main();

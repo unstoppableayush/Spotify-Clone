@@ -249,7 +249,7 @@ p{
     border-radius: 5px;
 }
 .songList .info{
-    font-size: 13px;
+    font-size: 14px;
     width: 150px;
 }
 .info{
@@ -262,7 +262,7 @@ p{
 }
 
 .playnow span{
-    font-size: 10px;
+    font-size: 12px;
     width: 50px;
     padding: 10px;
 }
@@ -331,6 +331,8 @@ p{
 
 .songinfo , .songtime{
     padding: 0px 10px;
+    font-weight: bold;
+     font-size: 15px;
 }
 
 .hamburger{
@@ -371,14 +373,11 @@ p{
         display: block;
         cursor: pointer;
     }
- 
-    .songinfo , .songtime{
-        font-size: 15px;
-    }
+
 
     .abovebar{
         padding-bottom: 10px;
-        padding-top: 23px;
+        padding-top: 15px;
     }
     .right{
         width: 100vw;
@@ -440,16 +439,18 @@ p{
         width: auto;
     }
     .play{
-        bottom:12px;
+        bottom: 20%;
     }
    
      .card:hover{
         .play {
             opacity: 1;
-            bottom: 22px;
+            bottom: 30%;
         }
     } 
-    
+    .abovebar{
+        padding-top: 7px;
+    }
     
     .card-container{
         margin-bottom: 20vh;
@@ -477,7 +478,10 @@ p{
         display: none;
     
     }
-
+    .songinfo , .songtime{
+        font-weight: bold;
+         font-size: 13px;
+    }
     .loginbtn{
         font-weight: bold;
         font-size: 12px;
