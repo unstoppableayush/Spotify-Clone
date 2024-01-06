@@ -24,7 +24,7 @@ async function getSongs(folder){
 
     currFolder = folder;
 
-    let b = await fetch(`http://127.0.0.1:3002/${currFolder}/`);
+    let b = await fetch(`http://127.0.0.1:3000/${currFolder}/`);
 
     let resposne = await b.text();
 
@@ -84,7 +84,7 @@ const playMusic = (track , pause=false)=>{
 
 async function displayAlbums(){
 
-    let b = await fetch(`http://127.0.0.1:3002/songs/`);
+    let b = await fetch(`http://127.0.0.1:3000/songs/`);
 
     let resposne = await b.text();
 
@@ -103,7 +103,7 @@ async function displayAlbums(){
             let folder = e.href.split("/").slice(-2)[0];
             
             //get the metadat of the folder
-            let a = await fetch(`http://127.0.0.1:3002/songs/${folder}/info.json`);
+            let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`);
             let resposne = await a.json();
             console.log(resposne);
 
@@ -235,7 +235,7 @@ async function main(){
     })   
 
     document.querySelector(".volume").addEventListener("mouseout" , ()=>{
-        document.querySelector(".range").classList.add("hide");
+            document.querySelector(".range").classList.add("hide");
     }) 
 }
 main();

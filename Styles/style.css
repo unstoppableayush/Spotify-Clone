@@ -13,6 +13,7 @@ body{
 .left{
     width: 25vw;
     padding: 10px;
+    z-index: 100;
 }
 .right{
     width: 75vw;
@@ -108,7 +109,7 @@ body{
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1; 
 }
 .header > *{
     padding: 20px;
@@ -116,6 +117,7 @@ body{
 .spotify-playlist{
     padding: 16px;
     font-size: 20px;
+    
 }
 
 .card-container{
@@ -125,6 +127,7 @@ body{
     margin: 20px;
     max-height: 60vh;
     overflow-y: auto;
+    padding-bottom: 25px;
     
 }
 .card{
@@ -150,8 +153,8 @@ p{
 }
 
 .play{
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     border-radius:50px;
     padding: 10px;
     background-color:#1fdf64;
@@ -159,7 +162,7 @@ p{
     top:120px;
     right: 25px;
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .card:hover{
@@ -211,9 +214,9 @@ p{
     width: 70vw;
     padding: 12px;
     border-radius: 10px;
-    min-height: 45px;
-    opacity: 50%;
-
+    min-height: 50px;
+    opacity: 60%;
+    border: 1px solid white;
 }
 
 .songsbutton{
@@ -293,6 +296,7 @@ p{
 .abovebar{
     display: flex;
     justify-content: space-between;
+    padding-top: 5px;
 }
 
 .songsbutton{
@@ -357,6 +361,7 @@ p{
         width: 370px;
         background-color: #1f1e1e;
         padding: 0;
+        z-index: 12;
     }
 
     .close{
@@ -368,11 +373,12 @@ p{
     }
  
     .songinfo , .songtime{
-        font-size: 11px;
+        font-size: 15px;
     }
 
     .abovebar{
         padding-bottom: 10px;
+        padding-top: 23px;
     }
     .right{
         width: 100vw;
@@ -381,11 +387,12 @@ p{
     .playbar{
         /* width: 88vw; */
         width: calc(100vw - 60px);
-        
+        min-height: 80px;
     }
     .seekbar{
         /* width: 95%; */
         width: calc(100vw - 60px);
+        bottom: 13px;
     }
 
     .hamburger{
@@ -394,6 +401,9 @@ p{
     }
     .card{
         width: 250px;
+    }
+    .play{
+        top: 230px;
     }
     .card:hover{
         .play {
@@ -404,13 +414,23 @@ p{
     .card-container{
         justify-content: center;
         max-height: unset;
-
         overflow-y: unset;
-    
+        padding-bottom: 20vh;
     }
     .left{
         position: fixed;
         top: 0px;
+    }
+    .volume{
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10 px;
+        width: 30%; */
+        width: 20%;
+    }
+    .songtime{
+        width: 20%;
     }
     
 }
@@ -419,23 +439,31 @@ p{
     .card{
         width: auto;
     }
-    .card:hover{
+    .play{
+        bottom:12px;
+    }
+   
+     .card:hover{
         .play {
             opacity: 1;
-            top:255px;
+            bottom: 22px;
         }
-    }
+    } 
+    
+    
     .card-container{
         margin-bottom: 20vh;
     }
-    
-    
-    
     .volume{
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         gap: 10 px;
-        width: 30%;
+        width: 30%; */
+        display: flex;
+        justify-content: end;
+        bottom: 8px;
+        width: 10%;
+        padding: 0 18px;
     }
     .buttons > *{
         margin: 0 2px;
